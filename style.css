@@ -14,6 +14,7 @@
     --clr-light: #fff;
     --clr-dark: #303030;
     --clr-accent: #3ddc84;
+    --clr-accent2: #d7effe;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -31,6 +32,10 @@
         --fs-h3: 1.5rem;
         --fs-body: 1.125rem;
     }
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /*General styles*/
@@ -69,10 +74,10 @@ strong{
     font-weight: var(--fw-bold);
 }
 
-:focus{
+/*:focus{
     outline: 3px solid var(--clr-accent);
     outline-offset: 3px;
-}
+}*/
 
 /*buttons*/
 
@@ -106,6 +111,7 @@ strong{
 
 .section__title--intro strong{
     display: block;
+    color: black;
 }
 
 .section__subtitle{
@@ -123,12 +129,118 @@ strong{
 
 
 /* header */ 
-nav{
-    display: none;
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
 }
 
+.logo{
+    max-width: 200px;
+    margin: 0;
+    padding: 0;
+}
 
+.logo img{
+    padding: 0;
+    margin: 0;
+}
 
+.nav{
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav__list{
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link{
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h3);
+    text-decoration: none;
+}
+
+.nav__link:hover{
+    color: var(--clr-accent)
+}
+
+.nav-toggle{
+    padding:.5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+.nav-open .nav{
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle{
+    position: fixed;
+}
+
+.nav-open .hamburger{
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before{
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after{
+    opacity: 0;
+}
+
+/* hamburger menu*/
+
+.hamburger{
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    background: var(--clr-accent);
+    width: 2em;
+    height: 3px; 
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hamburger::before{top:6px;}
+.hamburger::after{bottom: 6px}
 
 /* intro section */ 
 .intro{
@@ -204,6 +316,11 @@ nav{
     max-width: 500px;
     margin: 0 auto;
  }
+
+ .service p{
+     text-align: justify;
+ }
+
 @media (min-width: 800px) {
     .services{
         display: flex;
@@ -295,6 +412,64 @@ nav{
     opacity: .75;
 }
 
+/*contact me section*/
+.contact-me{
+    background-color: var(--clr-accent2);
+}
+.contact-me h2{
+    padding-bottom: .5em;
+    text-align: center;
+}
+
+.form{
+    margin: auto;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--ff-primary);
+}
+
+.form-label,
+.form-radio{
+    font-weight: var(--fw-bold);
+}
+
+.form-label{
+
+}
+
+.form-input,
+.form-textarea{
+    box-shadow: var(--bs);
+    padding: 12px 20px;
+    margin: .8em;
+    border-radius: 5px;
+    border: none;
+}
+.form-radio{
+    display: flex;
+}
+
+.form-label-radio{
+    margin-left: 1em;
+    padding: 1em;
+    width: 2em;
+    height: 2em;
+}
+.form-radio-btn{
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+
+.form .btn{
+    margin: 2em auto;
+    padding: 1em 4em;
+    border-radius: 5px;
+    border: none; 
+    box-shadow: var(--bs);
+}
+
 /* footer section*/ 
 .footer{
     background: black;
@@ -309,17 +484,8 @@ nav{
     text-decoration: none;
 }
 
-.footer__link{
-    font-weight: var(--fw-bold);
-}
-
-.footer__link:hover,
 .social-list__link:hover{
     opacity: .7;
-}
-
-.footer__link:hover{
-    text-decoration: underline;
 }
 
 .social-list{
@@ -331,9 +497,23 @@ nav{
 }
 
 .social-list__item{
-    margin: 0 .5;
+    margin: 0 .5em;
 }
 
 .social-list__link{
-    padding: 5em;
+    padding: .5em;
+}
+
+/* ---------------------------------------------- Individual portfolio item styles -----------------------------------------------------*/
+
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item-individual p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
