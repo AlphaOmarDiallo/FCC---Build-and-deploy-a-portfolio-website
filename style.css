@@ -318,7 +318,7 @@ header{
  }
 
  .service p{
-     text-align: justify;
+     text-align: left;
  }
 
 @media (min-width: 800px) {
@@ -398,7 +398,7 @@ header{
 }
 
 .portfolio__item{
-    background: var(--clr-accent);
+    background: var(--clr-dark);
     overflow: hidden;
 }
 
@@ -433,10 +433,6 @@ header{
 .form-label,
 .form-radio{
     font-weight: var(--fw-bold);
-}
-
-.form-label{
-
 }
 
 .form-input,
