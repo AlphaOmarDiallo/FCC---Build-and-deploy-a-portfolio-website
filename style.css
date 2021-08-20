@@ -263,6 +263,8 @@ header{
 
 .intro__img{
     box-shadow: var(--bs);
+    width: 100%;
+    height: auto;
 }
 
 /*.section__subtitle--intro{
@@ -451,6 +453,8 @@ header{
 .portfolio__img:hover{
     transform: scale(1.2);
     opacity: .75;
+    width: 100%;
+    height: auto;
 }
 
 /*contact me section*/
