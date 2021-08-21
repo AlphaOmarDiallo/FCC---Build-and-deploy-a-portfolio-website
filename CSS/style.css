@@ -264,7 +264,7 @@ header{
 .intro__img{
     box-shadow: var(--bs);
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 /*.section__subtitle--intro{
@@ -382,7 +382,6 @@ header{
 .about-me__img{
     box-shadow: var(--bs);
     width: 100%;
-    height: 100%;
 }
 
 .about-me p{
