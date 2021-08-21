@@ -356,19 +356,47 @@ header{
  }
 
  .service p{
-     text-align: left;
+     text-align: justify;
+ }
+
+.stack{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.stack h4{
+    text-align: center;
+}
+
+.stack__type-list{
+    list-style: none;
+    padding: 0;
+ }
+
+ .stack__item{
+    text-align: center;
+    padding: 0;
  }
 
 @media (min-width: 800px) {
     .services{
         display: flex;
-        max-width: 1500px;
+        max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
     }
 
     .service + .service {
         margin-left: 2em;
+    }
+    .stack{
+        display: flex;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
     }
 }
 
