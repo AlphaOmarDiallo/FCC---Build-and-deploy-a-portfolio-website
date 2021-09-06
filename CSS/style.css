@@ -339,7 +339,7 @@ header{
 }
 
 .my-services .btn{
-    color: var(--clr-light);
+    color: var(--clr-dark);
 }
 .section__title--services{
     color: var(--clr-accent);
