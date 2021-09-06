@@ -336,6 +336,14 @@ header{
     text-align: center;
 }
 
+.my-services a{
+    color: var(--clr-accent);
+    text-decoration: none;
+}
+
+.my-services .btn{
+    color: var(--clr-light);
+}
 .section__title--services{
     color: var(--clr-accent);
     position: relative;
@@ -502,6 +510,8 @@ header{
 .portfolio__item{
     background: var(--clr-dark);
     overflow: hidden;
+    margin: .2em;
+    border: var(--clr-accent) solid 2px;
 }
 
 .portfolio__img{
